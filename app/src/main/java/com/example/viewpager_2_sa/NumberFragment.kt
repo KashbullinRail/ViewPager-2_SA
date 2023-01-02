@@ -1,10 +1,8 @@
 package com.example.viewpager_2_sa
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.viewpager_2_sa.databinding.FragmentNumberBinding
 
@@ -26,7 +24,7 @@ class NumberFragment : Fragment(R.layout.fragment_number) {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.takeIf { it.containsKey(ARG) }?.apply {
-            
+            binding.tvNumber.text = getInt(ARG).toString()
         }
 
     }
