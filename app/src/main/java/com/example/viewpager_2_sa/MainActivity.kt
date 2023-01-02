@@ -12,6 +12,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: NumberAdapter
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
+    private val tabNames: Array<String> = arrayOf(
+        "Первый",
+        "Второй",
+        "Третий",
+        "Четвертый",
+        "Пятый",
+        "Шестой",
+        "Седьмой"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tabLayout)
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "TAB ${(position + 1)}"
+            tab.text = tabNames[position]
         }.attach()
 
     }
