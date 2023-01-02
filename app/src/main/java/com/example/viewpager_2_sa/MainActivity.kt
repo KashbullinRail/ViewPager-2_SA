@@ -22,6 +22,16 @@ class MainActivity : AppCompatActivity() {
         "Седьмой"
     )
 
+    private val tabNumber: Array<Int> = arrayOf(
+        R.drawable.ic_baseline_30fps_24,
+        R.drawable.ic_baseline_airport_shuttle_24,
+        R.drawable.ic_baseline_brightness_5_24,
+        R.drawable.ic_baseline_euro_24,
+        R.drawable.ic_baseline_donut_small_24,
+        R.drawable.ic_baseline_filter_alt_24,
+        R.drawable.ic_baseline_fitbit_24
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,6 +44,16 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabNames[position]
+
+            //Set icon drawable
+            tab.setIcon(tabNumber[position])
+
+            //Add badge in tabLayout
+            if (position == 2) {
+                val badge = tab.orCreateBadge
+                badge.number = 2
+            }
+
         }.attach()
 
     }

@@ -17,6 +17,8 @@
         app:tabIndicatorHeight="4dp"
         app:tabMode="scrollable" />
 
+<!--    app:tabTextAppearance="@style/MyCustomText"-->
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
