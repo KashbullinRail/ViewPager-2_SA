@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class NumberAdapter(fragment: NumberFragment): FragmentStateAdapter(fragment) {
+class NumberAdapter(fragment: MainActivity): FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 50
 
     override fun createFragment(position: Int): Fragment {
